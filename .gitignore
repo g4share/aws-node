@@ -1,0 +1,26 @@
+.idea
+
+# Mac OS
+.DS_Store
+
+# Terraform Config
+aws_config.json
+
+# Terraform
+*.tfstate
+*.tfstate.*
+
+.terraform.lock.hcl
+
+.terraform/
+
+terraform.tfvars
+terraform.tfvars.json
+
+*.tfstate.backup
+*.tfvars.backup
+
+terraform.log
+
+*.tfplan
+*.tfplan.json

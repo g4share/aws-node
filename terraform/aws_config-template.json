@@ -1,0 +1,21 @@
+{
+    "region" : "us-east-1",
+    "credentials" : {
+        "access_key" : "********************",
+        "secret_key" : "******/*********************************"
+    },
+    "keyPair" : {
+        "key_name"   : "aws-virginia",
+        "public_key" : "~/.ssh/aws-virginia.pem.pub"
+    },
+    "ec2" : {
+        "ami" : "ami-0a699202e5027c10d",
+        "instance_type" : "t2.micro",
+        "key_name" : "aws-virginia",
+        "key_path" : "~/.ssh/aws-virginia"
+    },
+    "duckDns" : {
+        "subdomain" : "*******",
+        "token" : "********-****-****-****-************"
+    }
+}
