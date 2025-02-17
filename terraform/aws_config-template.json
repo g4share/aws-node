@@ -1,0 +1,28 @@
+{
+    "tags": {
+        "Owner": "???",
+        "Discipline": "???",
+        "Purpose": "???"
+    },
+    "region" : "us-east-1",
+    "credentials" : {
+        "access_key" : "???",
+        "secret_key" : "???",
+        "token" : "???"
+    },
+    "keyPair" : {
+        "name"   : "aws-us-east-1",
+        "file_name"   : "~/.ssh/aws-us-east-1.pem"
+    },
+    "ec2" : {
+        "ami" : "ami-0a7a4e87939439934",
+        "instance_type" : "t4g.medium",
+        "user": "ubuntu"
+    },
+    "duckDns" : {
+        "subdomain" : {
+            "master": "???"
+        },
+        "token" : "???"
+    }
+}
