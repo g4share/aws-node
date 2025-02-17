@@ -12,6 +12,15 @@ resource "aws_key_pair" "key_pair" {
     public_key = file(format("%s.pub", local.aws_config.keyPair.file_name))
 }
 
+resource "aws_kms_key" "ebs_encryption_key" {
+    deletion_window_in_days = 10
+    enable_key_rotation     = true
+    tags = merge(
+        local.aws_config.tags,
+        { Name = "Encrypting EBS volumes" }
+    )
+}
+
 resource "aws_security_group" "ssh_sg" {
     name        = "ssh"
     description = "22/tcp"
@@ -106,7 +115,9 @@ resource "aws_instance" "k8s_master" {
     root_block_device {
         volume_size           = 30
         delete_on_termination = true
-        volume_type           = "gp2"
+        volume_type           = "gp3"
+        encrypted             = true
+        kms_key_id            = aws_kms_key.ebs_encryption_key.arn
     }
 
     user_data = templatefile("userdata/duckdns.tpl", {
